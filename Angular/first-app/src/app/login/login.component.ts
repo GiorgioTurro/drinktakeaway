@@ -14,7 +14,5 @@ Password: string ="";
 
   ngOnInit(): void {
   }
- toggleRegister(){
-   this.showReg=true;
- }
+ 
 }
