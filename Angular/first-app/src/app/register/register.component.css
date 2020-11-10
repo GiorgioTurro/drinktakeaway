@@ -56,15 +56,17 @@ img{
   background-color: #222;
 }
 
-.reg-button{
+.back-button{
+  border: 1px solid #222;
   background-color: white;
   color: #222;
 }
 
-.reg-button:hover{
-  background-color: #222 !important; 
-}
-
 a{
   text-decoration: none;
+}
+
+.back-button:hover{
+  background-color: #222 !important;
+  
 }
