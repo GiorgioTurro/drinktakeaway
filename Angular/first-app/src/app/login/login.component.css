@@ -45,6 +45,7 @@ input:enabled:focus{
 
 img{
   width: 100%;
+  height: -webkit-fill-available;
 }
 
 .button-group{
