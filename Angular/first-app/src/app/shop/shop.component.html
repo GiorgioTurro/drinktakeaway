@@ -1,1 +1,18 @@
-<p>shop works!</p>
+<div class="card">
+    <p-table [value]="shops" selectionMode="single" [(selection)]="selectedShop" dataKey="code">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-shop>
+            <tr [pSelectableRow]="shop">
+                <td>{{shop.name}}</td>
+                <td>{{shop.address}}</td>
+                <td>{{shop.city}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

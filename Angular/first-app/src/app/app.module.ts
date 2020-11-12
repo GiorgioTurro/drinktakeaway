@@ -13,6 +13,8 @@ import { CartComponent } from './cart/cart.component';
 import { ShopComponent } from './shop/shop.component';
 import { MenuComponent } from './shop/menu/menu.component';
 import { CategoryComponent } from './shop/menu/category/category.component';
+import {TableModule} from 'primeng/table';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { CategoryComponent } from './shop/menu/category/category.component';
     AppRoutingModule,
     ButtonModule,
     InputTextModule,
-    FormsModule
+    FormsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
