@@ -10,4 +10,6 @@ export class Product {
         this.description=description;
         this.category=category;
     }
+
+    
 }

@@ -1,5 +1,5 @@
 <div class="card">
-    <p-table [value]="shops" selectionMode="single" [(selection)]="selectedShop" dataKey="code">
+    <p-table [value]="shops" selectionMode="single" [(selection)]="selectedShop" >
         <ng-template pTemplate="header">
             <tr>
                 <th>Name</th>
@@ -12,6 +12,28 @@
                 <td>{{shop.name}}</td>
                 <td>{{shop.address}}</td>
                 <td>{{shop.city}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<div class="card">
+    <p-table [value]="selectedShop.menu" *ngIf="selectedShop!==null">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Amount</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr [pSelectableRow]="shop">
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.category}}</td>
+                <td><input id="amount-input" type="number" name="amount" value="0" step="1" min="0"></td>
             </tr>
         </ng-template>
     </p-table>
