@@ -41,6 +41,7 @@ order: Product;
 
   onAddProduct(p: Product){
     this.order.push(p);
+    p.quantity=0;
     console.log(this.order);
   }
 
