@@ -1,8 +1,14 @@
-img{
-  width: auto;
-  border: 2px solid #222;
-  border-radius: 10px;
-}
+#map {
+           border: 18px groove #312004;
+           border-radius: 18px;
+           height: 500px;
+       }
+       .leaflet-popup-content-wrapper {
+           background: #fbb324;
+           border: solid 3px #000000;
+           color: #000000;
+           font-size: 14px;
+       } 
 
 .map{
   padding: 10px;

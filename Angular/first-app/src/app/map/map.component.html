@@ -1,5 +1,41 @@
 <body>
   <div class="map">
-    <img src="assets\images\map-placeholder.png" alt="map">
+    <div id="map">
+
+            <script>
+                var map = L.map('map').setView([45.0646803, 7.6955659], 13);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                var beerIcon = L.Icon.extend({
+                    options: {
+                        iconSize:   [25, 25]
+                    }
+                });
+
+                var locale = [
+                    [45.0646803, 7.6955659, "Jumping Jester", "Pub", "Indirizzo" ],
+                    [45.064412, 7.683251, "Clorophilla", "Cocktaileria", "Indirizzo"],
+                    [45.071133, 7.659841, "Irish pub", "Birreria", "Indirizzo"]
+                ];
+
+                var iconUrl = 'img/beer-coloured.png';
+
+                var lat, lon;
+                for (var i=0; i<locale.length; i++)
+                {for(var j=0;j<locale.length; j++)
+                {   //scorre sulla riga i per la latitudine, per la longitudine abbiamo impostato manualmente lo scorrimento
+                    //per fermarsi al punto giusto (seconda colonna)
+                    lat = locale[i][0];
+                    lon = locale[i][1];
+                    var icon = new beerIcon({iconUrl: iconUrl});
+                    var popupContent = i+1 +  ". " + locale[i][2] + "<br>" + locale[i][3] + "<br>" + locale[i][4] + "<br>Tipo affollamento";
+
+                    L.marker([lat, lon], {icon: icon}).bindPopup(popupContent).addTo(map);
+                }
+                }   //fine ciclo for
+            </script></div>
   </div>
 </body>

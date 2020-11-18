@@ -14,10 +14,12 @@ shops: Shop[];
 selectedShop: Shop;
 menu: Product[];
 menu2: Product[];
+order: Product;
 
   constructor() { }
 
   ngOnInit() {
+    this.order=[];
     this.menu=[
       new Product('Bulldog', 3.50, 'Birra doppio malto', 'Birra'),
       new Product('Primitivo di Manduria', 8.00, 'Vino rosso', 'Vino')
@@ -33,7 +35,13 @@ menu2: Product[];
       new Shop('Birbe di Pollo Store', 'Via Dei Polli, 13', 'Torino', this.menu),
       new Shop('Un Altro', 'Viale Altrove, 99', 'Torino', this.menu)
     ];
-    this.selectedShop=this.shops[0];
+  this.selectedShop=this.shops[0];
+  console.log(this.order);
+  }
+
+  onAddProduct(p: Product){
+    this.order.push(p);
+    console.log(this.order);
   }
 
 }
