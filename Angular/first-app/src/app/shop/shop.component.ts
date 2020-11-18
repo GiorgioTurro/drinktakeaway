@@ -40,9 +40,19 @@ order: Product;
   }
 
   onAddProduct(p: Product){
-    this.order.push(p);
+     var exist=false;
+    for(var prod of this.order){
+      if(prod.name==p.name && prod.price==p.price && prod.description==p.description && prod.category==p.category){
+        exist=true;
+        prod.quantity=p.quantity;
+      }
+    }
+    if(exist==false){
+      this.order.push(p);
+      console.log(this.order);
+    }
     p.quantity=0;
-    console.log(this.order);
+    exist=false;
   }
 
 }
