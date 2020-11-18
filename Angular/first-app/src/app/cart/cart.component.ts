@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../shop/order.service';
+import { Product } from '../shop/shared/product.model';
 
 @Component({
   selector: 'app-cart',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 subtotal: number = 0.00;
-  constructor() { }
+order: Product[]=[];
+  constructor(orderService: OrderService) {
+    // this.order = orderService.getOrder();
+  }
 
   ngOnInit(): void {
   }

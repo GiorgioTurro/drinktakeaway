@@ -14,12 +14,11 @@ shops: Shop[];
 selectedShop: Shop;
 menu: Product[];
 menu2: Product[];
-order: Product;
+order: Product[]=[];
 
   constructor() { }
 
   ngOnInit() {
-    this.order=[];
     this.menu=[
       new Product('Bulldog', 3.50, 'Birra doppio malto', 'Birra'),
       new Product('Primitivo di Manduria', 8.00, 'Vino rosso', 'Vino')
