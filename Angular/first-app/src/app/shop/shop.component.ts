@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Shop } from './shop.model';
 import { TableModule } from 'primeng/table';
 import { Product } from './shared/product.model';
-
+import { OrderService } from './order.service';
 
 @Component({
   selector: 'app-shop',
@@ -14,9 +14,8 @@ shops: Shop[];
 selectedShop: Shop;
 menu: Product[];
 menu2: Product[];
-order: Product[]=[];
 
-  constructor() { }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit() {
     this.menu=[
@@ -35,23 +34,14 @@ order: Product[]=[];
       new Shop('Un Altro', 'Viale Altrove, 99', 'Torino', this.menu)
     ];
   this.selectedShop=this.shops[0];
-  console.log(this.order);
+  // console.log(this.order);
   }
 
-  onAddProduct(p: Product){
-     var exist=false;
-    for(var prod of this.order){
-      if(prod.name==p.name && prod.price==p.price && prod.description==p.description && prod.category==p.category){
-        exist=true;
-        prod.quantity=p.quantity;
-      }
-    }
-    if(exist==false){
-      this.order.push(p);
-      console.log(this.order);
-    }
-    p.quantity=0;
-    exist=false;
+  onAddToOrder(p: Product){
+    return this.orderService.onAddProduct(p);
   }
+
+
+
 
 }

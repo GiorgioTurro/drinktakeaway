@@ -9,12 +9,14 @@ import { Product } from '../shop/shared/product.model';
 })
 export class CartComponent implements OnInit {
 subtotal: number = 0.00;
-order: Product[]=[];
-  constructor(orderService: OrderService) {
-    // this.order = orderService.getOrder();
+  constructor(private orderService: OrderService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+subtotal=this.orderService.onCalculateSubtotal();
+onEmptyCart(){
+  return this.orderService.onEmptyOrder();
+}
 
 }

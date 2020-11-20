@@ -6,12 +6,14 @@
     <ng-template pTemplate="header">
         <tr>
             <th>Products</th>
+            <th>#</th>
             <th>Price</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body">
         <tr >
             <td>-</td>
+            <th>-</th>
             <td>0.00</td>
         </tr>
     </ng-template>
@@ -26,5 +28,5 @@
   </div>
 </div>
 <hr>
-<button pButton pRipple id="empty-button" type="button" label="Empty Cart" class="p-button-secondary" style="margin:auto; width:100%; margin-bottom:6px;" ></button>
+<button pButton pRipple id="empty-button" type="button" label="Empty Cart" class="p-button-secondary" style="margin:auto; width:100%; margin-bottom:6px;" (click)=onEmptyCart()></button>
 <button pButton pRipple type="button" label="Order Now" class="p-button-secondary" style="margin:auto; width:100%;" ></button>

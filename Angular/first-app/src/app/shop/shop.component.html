@@ -35,7 +35,7 @@
                 <td>{{product.description}}</td>
                 <td>{{product.category}}</td>
                 <td><input id="amount-input" type="number" name="amount" value="0" step="1" min="0" [(ngModel)]="product.quantity"></td>
-                <td><p-button id="confirm-button" icon="pi pi-check" [disabled]="product.quantity<=0" (click)=onAddProduct(product)></p-button></td>
+                <td><p-button id="confirm-button" icon="pi pi-check" [disabled]="product.quantity<=0" (click)=onAddToOrder(product)></p-button></td>
             </tr>
         </ng-template>
     </p-table>
