@@ -1,15 +1,15 @@
-#map {
-           border: 18px groove #312004;
-           border-radius: 18px;
-           height: 500px;
-       }
-       .leaflet-popup-content-wrapper {
-           background: #fbb324;
-           border: solid 3px #000000;
-           color: #000000;
-           font-size: 14px;
-       } 
+@import "~leaflet/dist/leaflet.css";
 
-.map{
-  padding: 10px;
+.map-frame {
+  position: absolute;
+  /* border: 2px solid black; */
+  /* margin: 0; */
+  /* padding: 0; */
+  height: 50%;
+  width: 100%;
+}
+
+#map {
+  height: 100%;
+  width: auto;
 }

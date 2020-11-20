@@ -8,15 +8,15 @@ import { Product } from '../shop/shared/product.model';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-subtotal: number = 0.00;
+// subtotal: number = 0.00;
   constructor(private orderService: OrderService) {
   }
-
+//
   ngOnInit() {
   }
-subtotal=this.orderService.onCalculateSubtotal();
-onEmptyCart(){
-  return this.orderService.onEmptyOrder();
-}
+  // onEmptyCart(){
+// subtotal=this.orderService.onCalculateSubtotal();
+//   return this.orderService.onEmptyOrder();
+// }
 
 }

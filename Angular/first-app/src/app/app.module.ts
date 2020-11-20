@@ -14,6 +14,8 @@ import { ShopComponent } from './shop/shop.component';
 import { MenuComponent } from './shop/menu/menu.component';
 import { CategoryComponent } from './shop/menu/category/category.component';
 import { TableModule } from 'primeng/table';
+import { MarkerService } from './_services/marker.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { TableModule } from 'primeng/table';
     ButtonModule,
     InputTextModule,
     FormsModule,
-    TableModule
+    TableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
