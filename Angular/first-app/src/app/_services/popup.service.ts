@@ -11,6 +11,7 @@ export class PopUpService {
   makeCapitalPopup(data: any): string {
     return `` +
       `<div> Nome: ${ data.properties.name }</div>` +
-      `<div> Tipo: ${ data.type }</div>`
+      `<div> Tipo: ${ data.properties.type }</div>` +
+      `<div> Indirizzo: ${ data.properties.address } - ${ data.properties.city }</div>`
   }
 }
