@@ -9,13 +9,12 @@ import { Product } from '../shop/shared/product.model';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private orderService: OrderService) {
+  constructor(public orderService: OrderService) {
   }
 //
   ngOnInit() {
   }
   onEmptyCart(){
-  this.subtotal=0.00;
   return this.orderService.onEmptyOrder();
 }
 
