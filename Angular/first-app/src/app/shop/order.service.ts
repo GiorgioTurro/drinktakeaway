@@ -9,12 +9,14 @@ export class OrderService {
   constructor() { }
 order: Product[]=[];
 product1: Product;
+subtotal: number=0;
 
 getOrder(){
   return this.order;
 }
 
 onAddProduct(p: Product){
+  this.subtotal=0;
    let exist=0;
   for(let prod of this.order){
     if(prod.name==p.name && prod.price==p.price && prod.description==p.description && prod.category==p.category){
@@ -31,21 +33,20 @@ onAddProduct(p: Product){
     this.order.push(this.product1);
     console.log(this.order);
   }
+  for(var prod of this.order){
+      this.subtotal=this.subtotal+(prod.quantity*prod.price)
+    }
+  console.log(this.subtotal);
   p.quantity=0;
 }
 
 onEmptyOrder(){
   this.order=[];
+  this.subtotal=0.00;
+  console.log(this.subtotal);
   console.log(this.order);
 }
 
-onCalculateSubtotal(){
-  let subtotal = 0.00;
-  for(var prod of this.order){
-    subtotal=subtotal+(prod.quantity*prod.price)
-  }
-  console.log(subtotal);
-  return subtotal;
-}
+
 
 }

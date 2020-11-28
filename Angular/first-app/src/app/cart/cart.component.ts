@@ -8,7 +8,7 @@ import { Product } from '../shop/shared/product.model';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-subtotal: number = 0.00;
+
   constructor(private orderService: OrderService) {
   }
 //
@@ -18,6 +18,5 @@ subtotal: number = 0.00;
   this.subtotal=0.00;
   return this.orderService.onEmptyOrder();
 }
-// this.subtotal=this.orderService.onCalculateSubtotal(); non toccare o ti ammazzo
 
 }
