@@ -6,10 +6,13 @@ import { Product } from './shared/product.model';
 })
 export class MenuService {
 menu: Product [] = [];
+shopName: string="";
   constructor() { }
 
 
-
+showName(name: string){
+  this.shopName=name;
+}
 
 
   showMenu(menu: Product[]){

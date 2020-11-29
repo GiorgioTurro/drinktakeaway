@@ -40,7 +40,9 @@ menu2: Product[];
   onAddToOrder(p: Product){
     return this.orderService.onAddProduct(p);
   }
-
+  onPassShopName(shopName: string){
+    return this.menuService.showName(shopName);
+  }
   onShowMenu(shop: Shop){
     return this.menuService.showMenu(shop.menu);
   }
