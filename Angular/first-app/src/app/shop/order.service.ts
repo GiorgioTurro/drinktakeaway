@@ -48,6 +48,7 @@ onEmptyOrder(){
 }
 
 removeFromOrder(p: Product){
+  this.subtotal=this.subtotal-(p.quantity*p.price);
   this.order = this.order.filter(obj => obj !== p);
 }
 
