@@ -47,6 +47,8 @@ onEmptyOrder(){
   console.log(this.order);
 }
 
-
+removeFromOrder(p: Product){
+  this.order = this.order.filter(obj => obj !== p);
+}
 
 }

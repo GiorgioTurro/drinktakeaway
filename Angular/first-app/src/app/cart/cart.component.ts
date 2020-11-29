@@ -16,6 +16,10 @@ export class CartComponent implements OnInit {
   }
   onEmptyCart(){
   return this.orderService.onEmptyOrder();
-}
+  }
+
+  onRemoveProduct(p: Product){
+    return this.orderService.removeFromOrder(p);
+  }
 
 }
