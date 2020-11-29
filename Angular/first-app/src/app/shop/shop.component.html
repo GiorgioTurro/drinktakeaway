@@ -1,5 +1,5 @@
 <div class="card">
-    <p-table [value]="shops" selectionMode="single" [(selection)]="selectedShop" >
+    <p-table [value]="shops" selectionMode="single" [(selection)]="selectedShop">
         <ng-template pTemplate="header">
             <tr>
                 <th>Name</th>
@@ -8,7 +8,7 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-shop>
-            <tr [pSelectableRow]="shop">
+            <tr [pSelectableRow]="shop" (click)="onShowMenu(shop)">
                 <td>{{shop.name}}</td>
                 <td>{{shop.address}}</td>
                 <td>{{shop.city}}</td>

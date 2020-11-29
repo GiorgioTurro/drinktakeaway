@@ -1,1 +1,25 @@
-<p>menu works!</p>
+<h2>Menu</h2>
+<div class="card">
+    <p-table [value]="this.menuService.menu" *ngIf="this.menuService.menu!==null">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Add to Cart</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr [pSelectableRow]="menu">
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.category}}</td>
+                <td><input id="amount-input" type="number" name="amount" value="0" step="1" min="0" [(ngModel)]="product.quantity"></td>
+                <td><p-button id="confirm-button" icon="pi pi-check" [disabled]="product.quantity<=0" (click)=onAddToOrder(product)></p-button></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

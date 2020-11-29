@@ -3,6 +3,7 @@ import { Shop } from './shop.model';
 import { TableModule } from 'primeng/table';
 import { Product } from './shared/product.model';
 import { OrderService } from './order.service';
+import { MenuService } from './menu.service';
 
 @Component({
   selector: 'app-shop',
@@ -15,7 +16,7 @@ selectedShop: Shop;
 menu: Product[];
 menu2: Product[];
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService, private menuService: MenuService) { }
 
   ngOnInit() {
     this.menu=[
@@ -40,7 +41,9 @@ menu2: Product[];
     return this.orderService.onAddProduct(p);
   }
 
-
+  onShowMenu(shop: Shop){
+    return this.menuService.showMenu(shop.menu);
+  }
 
 
 }
