@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
+import { ShowService } from '../show.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,11 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+show: Boolean = false;
+  constructor(public showService: ShowService) { }
 
   ngOnInit(): void {
   }
+
 
 }

@@ -4,7 +4,7 @@ import { TableModule } from 'primeng/table';
 import { Product } from './shared/product.model';
 import { OrderService } from './order.service';
 import { MenuService } from './menu.service';
-
+import { ShowService } from '../show.service';
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
@@ -15,8 +15,8 @@ shops: Shop[];
 selectedShop: Shop;
 menu: Product[];
 menu2: Product[];
-
-  constructor(private orderService: OrderService, private menuService: MenuService) { }
+show: boolean=false;
+  constructor(private orderService: OrderService, private menuService: MenuService, public showService: ShowService) { }
 
   ngOnInit() {
     this.menu=[
@@ -45,6 +45,10 @@ menu2: Product[];
   }
   onShowMenu(shop: Shop){
     return this.menuService.showMenu(shop.menu);
+  }
+
+  toggleMenu(){
+    return this.showService.toggleMenuComponent();
   }
 
 
