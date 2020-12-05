@@ -2,7 +2,7 @@
 
 .map-frame {
   position: absolute;
-   border: 2px solid black; 
+   border: 2px solid black;
   /* margin: 0; */
   /* padding: 0; */
   height: 50%;
@@ -13,4 +13,21 @@
 #map {
   height: 100%;
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .map-frame {
+    position: absolute;
+     border: 2px solid red;
+    /* margin: 0; */
+    /* padding: 0; */
+    height: 50%;
+    width: 750px;
+    margin: auto;
+  }
+
+  #map {
+    height: 100%;
+    width: 100%;
+  }
 }
