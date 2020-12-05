@@ -17,6 +17,15 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  decreaseAmount(p:Product){
+    return this.orderService.reduceFromOrder(p);
+  }
+
+  increaseAmount(p:Product){
+    p.quantity=p.quantity+1;
+    return this.onAddToOrder(p);
+  }
+
   onAddToOrder(p: Product){
     return this.orderService.onAddProduct(p);
   }

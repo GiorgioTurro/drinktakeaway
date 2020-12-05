@@ -21,9 +21,7 @@ onAddProduct(p: Product){
   for(let prod of this.order){
     if(prod.name==p.name && prod.price==p.price && prod.description==p.description && prod.category==p.category){
       exist=1;
-      this.product1 = new Product(p.name, p.price, p.description, p.category);
-      this.product1.quantity=p.quantity;
-      prod.quantity=this.product1.quantity;
+      prod.quantity++;
       console.log(this.order);
     }
   }
@@ -45,6 +43,20 @@ onEmptyOrder(){
   this.subtotal=0.00;
   console.log(this.subtotal);
   console.log(this.order);
+}
+
+reduceFromOrder(p: Product){
+  for(let prod of this.order){
+    if(prod.name==p.name && prod.price==p.price && prod.description==p.description && prod.category==p.category){
+      if(prod.quantity==1){
+        this.removeFromOrder(prod);
+      }else{
+        prod.quantity--;
+        this.subtotal=this.subtotal-prod.price;
+      }
+      console.log(this.order);
+    }
+  }
 }
 
 removeFromOrder(p: Product){
