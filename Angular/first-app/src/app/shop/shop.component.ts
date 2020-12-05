@@ -47,8 +47,8 @@ show: boolean=false;
     return this.menuService.showMenu(shop.menu);
   }
 
-  toggleMenu(){
-    return this.showService.toggleMenuComponent();
+  toggleMenu(shop: string){
+    return this.showService.toggleMenuComponent(shop);
   }
 
 

@@ -8,7 +8,7 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-shop>
-            <tr [pSelectableRow]="shop" (click)="onShowMenu(shop); onPassShopName(shop.name); this.showService.toggleMenuComponent(shop.name)">
+            <tr [pSelectableRow]="shop" (click)="onShowMenu(shop); onPassShopName(shop.name); this.showService.toggleMenuComponent(shop.name);">
                 <td>{{shop.name}}</td>
                 <td>{{shop.address}}</td>
                 <td>{{shop.city}}</td>
