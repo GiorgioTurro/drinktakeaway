@@ -2,7 +2,12 @@
   <h3>Your Cart</h3>
 </div>
 <hr>
-<div class="card">
+<div class="card-empty-cart" [hidden]="this.orderService.subtotal>0">
+  <h4>Seems that your cart is empty.</h4>
+  <img class="empty-cart-image" src="assets/images/cart-empty.png">
+  <h4>Add some products to your cart!</h4>
+</div>
+<div class="card" [hidden]="this.orderService.subtotal<=0">
     <p-table [value]="orderService.order" >
         <ng-template pTemplate="header">
             <tr>
