@@ -32,11 +32,12 @@
   </div>
 </div>
 <hr>
-<div class="discount">
+<!-- <div class="discount">
   <span class="p-input-icon-right" style="margin:auto; width:100%; margin-bottom:6px;">
     <input type="text" pInputText style="margin:auto; width:76%; margin-right:8px; text-transform:uppercase;" placeholder="Discount Code" [(ngModel)]="discount"/>
     <p-button class ="apply-button" label="Apply" icon="pi pi-check" [disabled]="discount==''"></p-button>
 </span>
-</div>
+</div> -->
 <button pButton pRipple id="empty-button" type="button" label="Empty Cart" class="p-button-secondary" style="margin:auto; width:100%; margin-bottom:6px;" (click)=onEmptyCart()></button>
-<button pButton pRipple type="button" label="Order Now" class="p-button-secondary" style="margin:auto; width:100%;" ></button>
+<!-- <button pButton pRipple type="button" label="Order Now" class="p-button-secondary" style="margin:auto; width:100%;" ></button> -->
+<div #paypal style="margin-top:6px;" [hidden]="paidFor || this.orderService.subtotal<=0"></div>

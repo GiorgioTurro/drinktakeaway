@@ -4,3 +4,4 @@
 [1126/231629.169:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\despa\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\0b21a97a-5940-45df-b68f-8d15d50dbae0: Impossibile trovare il percorso specificato. (0x3)
 [1129/153007.470:ERROR:directory_reader_win.cc(43)] FindFirstFile: Impossibile trovare il percorso specificato. (0x3)
 [1208/154345.094:ERROR:directory_reader_win.cc(43)] FindFirstFile: Impossibile trovare il percorso specificato. (0x3)
+[1224/122545.336:ERROR:directory_reader_win.cc(43)] FindFirstFile: Impossibile trovare il percorso specificato. (0x3)
