@@ -1,18 +1,24 @@
 @import "~leaflet/dist/leaflet.css";
 
 .map-frame {
-  position: absolute;
+  position: relative;
    border: 2px solid black;
   /* margin: 0; */
   /* padding: 0; */
-  height: 50%;
-  width: 750px;
-  margin: auto;
+  height: 100%;
+  width: 100%;
+  /* bottom: 8px; */
 }
 
 #map {
   height: 100%;
   width: 100%;
+  position: absolute;
+}
+body{
+  position: relative;
+  height: 100%;
+  margin: auto;
 }
 
 @media only screen and (max-width: 600px) {
