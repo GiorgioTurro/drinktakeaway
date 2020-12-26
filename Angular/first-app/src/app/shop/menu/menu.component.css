@@ -13,3 +13,7 @@ span{
   padding: 15px;
   vertical-align: super;
 }
+
+th, td {
+  text-align: center !important;
+}

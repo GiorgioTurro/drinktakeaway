@@ -59,3 +59,6 @@ h4{
   text-align: center;
   color:#607D8B;
 }
+th, td {
+  text-align: center !important;
+}
