@@ -19,7 +19,7 @@
                 <td>{{product.category}}</td>
                 <td>
                   <button pButton type="button" icon="pi pi-minus" iconPos="left" name="decrease-amount" ng-click="product.quantity=product.quantity-1" (click)="decreaseAmount(product);"></button>
-                    <span>{{ product.quantity }}</span>
+                    <span>{{ this.getProdQuantity(product) }}</span>
                   <button pButton name="increase-amount" type="button" icon="pi pi-plus" iconPos="left" ng-click="product.quantity=product.quantity+1" (click)="increaseAmount(product);"></button>
                 </td>
                 <!-- <td><button pButton type="button" icon="pi pi-minus" iconPos="left" name="decrease-amount" [(ngModel)]="this.product.quantity"></button><span>{{ this.product.quantity }}</span><button pButton name="increase-amount" type="button" icon="pi pi-plus" iconPos="left" [(ngModel)]="this.product.quantity"></button></td> -->

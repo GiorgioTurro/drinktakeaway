@@ -10,6 +10,7 @@ export class OrderService {
 order: Product[]=[];
 product1: Product;
 subtotal: number=0;
+q: number=0;
 
 getOrder(){
   return this.order;
@@ -64,4 +65,16 @@ removeFromOrder(p: Product){
   this.order = this.order.filter(obj => obj !== p);
 }
 
+onGetQty(p: Product){
+  this.q=0;
+  if (typeof this.order !== 'undefined' && this.order.length > 0){
+    for(let prod of this.order){
+      if(prod.name==p.name && prod.price==p.price && prod.description==p.description && prod.category==p.category){
+        this.q=prod.quantity;
+        break;
+      }
+  }
+}
+return this.q;
+}
 }
