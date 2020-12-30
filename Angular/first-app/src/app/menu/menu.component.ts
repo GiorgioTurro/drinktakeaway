@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from '../menu.service';
-import { Shop } from '../shop.model';
+import { MenuService } from '../_services/menu.service';
+import { Shop } from '../shop/shop.model';
 import { TableModule } from 'primeng/table';
 import { Product } from '../shared/product.model';
-import { OrderService } from "../order.service";
+import { OrderService } from "../_services/order.service";
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',

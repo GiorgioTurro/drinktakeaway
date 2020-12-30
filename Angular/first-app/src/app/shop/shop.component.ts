@@ -1,10 +1,10 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Shop } from './shop.model';
 import { TableModule } from 'primeng/table';
-import { Product } from './shared/product.model';
-import { OrderService } from './order.service';
-import { MenuService } from './menu.service';
-import { ShowService } from '../show.service';
+import { Product } from '../shared/product.model';
+import { OrderService } from '../_services/order.service';
+import { MenuService } from '../_services/menu.service';
+import { ShowService } from '../_services/show.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

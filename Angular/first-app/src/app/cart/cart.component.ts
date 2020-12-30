@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { OrderService } from '../shop/order.service';
-import { Product } from '../shop/shared/product.model';
+import { OrderService } from '../_services/order.service';
+import { Product } from '../shared/product.model';
 import { ButtonModule } from 'primeng/button';
 declare var paypal;
 @Component({

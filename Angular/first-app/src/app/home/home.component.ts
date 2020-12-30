@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-import { ShowService } from '../show.service';
+import { ShowService } from '../_services/show.service';
 
 @Component({
   selector: 'app-home',
