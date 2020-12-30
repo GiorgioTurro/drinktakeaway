@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { ShowService } from '../show.service';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-home',

@@ -37,8 +37,25 @@ header{
   border-radius: 10px;
 }
 
+.user-panel{
+  border: 2px solid #222;
+  border-radius: 10px;
+  margin: auto;
+}
+
 footer {
   text-align: center;
+}
+
+button {
+  color: #222 !important;
+}
+button:hover{
+  color: white !important;
+  background-color: #222 !important;
+}
+button:focus{
+  box-shadow: grey !important;
 }
 
 
