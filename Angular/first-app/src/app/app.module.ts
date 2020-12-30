@@ -17,6 +17,13 @@ import { TableModule } from 'primeng/table';
 import { MarkerService } from './_services/marker.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PopUpService } from './_services/popup.service';
+import { FacebookComponent } from './facebook/facebook.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -28,7 +35,9 @@ import { PopUpService } from './_services/popup.service';
     CartComponent,
     ShopComponent,
     MenuComponent,
-    CategoryComponent
+    CategoryComponent,
+    FacebookComponent,
+    UsersListComponent
       ],
   imports: [
     BrowserModule,
@@ -37,9 +46,28 @@ import { PopUpService } from './_services/popup.service';
     InputTextModule,
     FormsModule,
     TableModule,
+    SocialLoginModule,
     HttpClientModule
   ],
   providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '917904852943-1afvumvpn33hv9gjedpeet9ehrp34ljm.apps.googleusercontent.com'
+            ),
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('3713289542049565'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
     MarkerService,
     PopUpService
   ],

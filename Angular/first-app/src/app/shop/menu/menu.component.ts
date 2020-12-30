@@ -30,4 +30,8 @@ export class MenuComponent implements OnInit {
     return this.orderService.onAddProduct(p);
   }
 
+  getProductQuantity(p: Product){
+    return this.orderService.onGetQty(p);
+  }
+
 }

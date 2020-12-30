@@ -19,14 +19,14 @@ onAddProduct(p: Product){
   this.subtotal=0;
    let exist=0;
   for(let prod of this.order){
-    if(prod.name==p.name && prod.price==p.price && prod.description==p.description && prod.category==p.category){
+    if(prod.name==p.name && prod.price==p.price && prod.category==p.category){
       exist=1;
       prod.quantity++;
       console.log(this.order);
     }
   }
   if(exist===0){
-    this.product1 = new Product(p.name, p.price, p.description, p.category);
+    this.product1 = new Product(p.name, p.price, p.category);
     this.product1.quantity=p.quantity;
     this.order.push(this.product1);
     console.log(this.order);
@@ -47,7 +47,7 @@ onEmptyOrder(){
 
 reduceFromOrder(p: Product){
   for(let prod of this.order){
-    if(prod.name==p.name && prod.price==p.price && prod.description==p.description && prod.category==p.category){
+    if(prod.name==p.name && prod.price==p.price && prod.category==p.category){
       if(prod.quantity==1){
         this.removeFromOrder(prod);
       }else{
@@ -62,6 +62,19 @@ reduceFromOrder(p: Product){
 removeFromOrder(p: Product){
   this.subtotal=this.subtotal-(p.quantity*p.price);
   this.order = this.order.filter(obj => obj !== p);
+}
+
+onGetQty(p:Product){
+  let q = 0;
+  if (typeof this.order !== 'undefined' && this.order.length > 0){
+    for (let prod of this.order){
+      if(prod.name==p.name && prod.price == p.price && prod.category == p.category){
+        q = prod.quantity;
+        break;
+      }
+    }
+  }
+  return q;
 }
 
 }

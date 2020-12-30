@@ -21,10 +21,10 @@ paidFor = false;
         return actions.order.create({
           purchase_units: [
             {
-              description: this.orderService.order[0].description,
+              description: "Drink Take-Away",
               amount: {
                 currency_code: 'EUR',
-                value: this.orderService.order[0].price
+                value: this.orderService.subtotal
               }
             }
           ]
@@ -34,6 +34,7 @@ paidFor = false;
         const order = await actions.order.capture();
         this.paidFor=true;
         console.log(order);
+        this.onEmptyCart();
       },
       onError: err => {
         console.log(err);
