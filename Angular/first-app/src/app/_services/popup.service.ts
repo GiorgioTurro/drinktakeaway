@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MarkerService } from './marker.service';
-import { OrderService } from './order.service';
-import { MenuService } from './menu.service';
-import { ShowService } from './show.service';
+
 
 
 
@@ -11,10 +9,9 @@ import { ShowService } from './show.service';
 })
 export class PopUpService {
 
-  constructor(private orderService: OrderService, private menuService: MenuService, public showService: ShowService) { }
+  constructor() { }
 
   makeLocalePopup(data: any): string {
-
 
     return `` +
       `<div> Nome: ${ data.name }</div>` +

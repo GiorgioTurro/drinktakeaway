@@ -43,6 +43,7 @@ show: boolean=false;
         });
       }
       this.selectedShop=this.shops[0];
+      this.menuService.setShops(this.shops);
     });
 
   }
