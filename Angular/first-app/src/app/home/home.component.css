@@ -1,38 +1,56 @@
-body, button, input{
-  font-family: 'Montserrat', sans-serif;
-  color: #222;
+
+body, button, input, footer{
+font-family: 'Montserrat', sans-serif;
+color: #222;
 }
 
 header img{
-  height: fit-content;
-  width: 100%;
+height: fit-content;
+width: 100%;
 }
 
 header{
-  margin-top: 0;
+margin-top: 0;
 }
 
 .p-col-5{
-  border: 2px solid #222;
-  border-radius: 10px;
-  margin: 0 10px;
-  max-height: 500px;
+border: 2px solid #222;
+border-radius: 10px;
+margin: 0 10px;
+max-height: 500px;
 }
 .p-col-3{
-  border: 2px solid #222;
-  border-radius: 10px;
-  margin: auto;
+border: 2px solid #222;
+border-radius: 10px;
+margin: auto;
 }
 
 .p-col-12{
-  border: 2px solid #222;
-  border-radius: 10px;
+border: 2px solid #222;
+border-radius: 10px;
 }
 .p-grid{
-  margin-top: 10px;
+margin-top: 10px;
 }
 
 .p-col-8{
-  border: #222;
-  border-radius: 10px;
+border: #222;
+border-radius: 10px;
+}
+
+.user-panel{
+border: 2px solid #222;
+border-radius: 10px;
+margin: auto;
+}
+
+button {
+color: #222 !important;
+}
+button:hover{
+color: white !important;
+background-color: #222 !important;
+}
+button:focus{
+box-shadow: grey !important;
 }

@@ -18,25 +18,26 @@ export class MarkerService {
     iconUrl: '/assets/images/favicon.png',
     iconSize:     [30, 30]
   });
-    this.http.get('http://127.0.0.1:1111/api/v1/locale').subscribe((res: any) => {
+    this.http.get('http://127.0.0.1:1111/api/v1/getAllLocals').subscribe((res: any) => {
       for (const c of res) {
-        console.log(c)
-        const lat = c.lat;
-        const lon = c.lon;
-        const marker = L.marker([lat,lon], {icon: beerIcon, title:c.name});
-        marker.bindPopup(this.popupService.makeLocalePopup(c)).on("click", e => {
-          let shops = this.menuService.getShops();
-          for (const shop of shops){
-            console.log(shop.name);
-            console.log(e.sourceTarget.options.title)
-            if (shop.name == e.sourceTarget.options.title){
-              this.menuService.showName(shop.name);
-              this.menuService.showMenu(shop.menu);
-              this.orderService.onEmptyOrder();
-              this.showService.toggleMenuComponent(shop.name);
+        this.http.get('http://127.0.0.1:1111/api/v1/getDrinkQuantityToDo/' + c.id).subscribe((drinkNumber:any) => {
+          const lat = c.lat;
+          const lon = c.lon;
+          const marker = L.marker([lat,lon], {icon: beerIcon, title:c.name});
+          marker.bindPopup(this.popupService.makeLocalePopup(c, drinkNumber)).on("click", e => {
+            let shops = this.menuService.getShops();
+            for (const shop of shops){
+              console.log(shop.name);
+              console.log(e.sourceTarget.options.title)
+              if (shop.name == e.sourceTarget.options.title){
+                this.menuService.showName(shop.name);
+                this.menuService.showMenu(shop.menu);
+                this.orderService.onEmptyOrder();
+                this.showService.toggleMenuComponent(shop.name);
+              }
             }
-          }
-        }).addTo(map);
+          }).addTo(map);
+        });
       }
     });
   }

@@ -23,10 +23,10 @@ show: boolean=false;
   ngAfterViewInit(): void {
     //this.shops = [];
     this.menu=[]
-    this.menu2=[
-      new Product('4 Luppoli', 3.00, 'Birra')
-    ]
-    this.http.get('http://127.0.0.1:1111/api/v1/locale').subscribe((res: any) => {
+    // this.menu2=[
+    //   new Product(1, '4 Luppoli', 3.00)
+    // ]
+    this.http.get('http://127.0.0.1:1111/api/v1/getAllLocals').subscribe((res: any) => {
       for (const c of res) {
         let nameString = c.name;
         let newString = nameString.replace(" ", "%20");
@@ -36,7 +36,7 @@ show: boolean=false;
         this.http.get(menuUrl).subscribe((resMenu:any) => {
           console.log(resMenu)
           for (const menuElement of resMenu) {
-            menu3.push(new Product(menuElement.bevanda.name, menuElement.price, menuElement.bevanda.type))
+            menu3.push(new Product(menuElement.bevanda.id, menuElement.bevanda.name, menuElement.price, menuElement.bevanda.type))
           }
           var shop = new Shop(c.name, c.address, menu3);
           this.shops.push(shop);

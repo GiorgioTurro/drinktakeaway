@@ -1,11 +1,14 @@
-<div class="cart-title">
+<div class="cart-title" [hidden]="this.orderService.paidFor==true">
   <h3>Your Cart</h3>
 </div>
 <hr>
-<div class="card-empty-cart" [hidden]="this.orderService.subtotal>0">
-  <h4>Seems that your cart is empty.</h4>
+<div class="card-empty-cart" [hidden]="this.orderService.subtotal>0 || this.orderService.paidFor==true">
+  <h4>It seems that your cart is empty.</h4>
   <img class="empty-cart-image" src="assets/images/cart-empty.png">
   <h4>Add some products to your cart!</h4>
+</div>
+<div class="card-paid-order" [hidden]="this.orderService.paidFor==false">
+  <h4 style="color: green">Thanks for your order!</h4>
 </div>
 <div class="card" [hidden]="this.orderService.subtotal<=0">
     <p-table [value]="orderService.order" >
@@ -29,10 +32,10 @@
 </div>
 <hr>
 <div class="subtotal">
-  <div class="subtotal-label">
+  <div class="subtotal-label" [hidden]="this.orderService.paidFor==true">
     <h2>Subtotal:</h2>
   </div>
-  <div class="subtotal-amount">
+  <div class="subtotal-amount" [hidden]="this.orderService.paidFor==true">
     <h2><b> € {{ this.orderService.subtotal }}</b></h2>
   </div>
 </div>

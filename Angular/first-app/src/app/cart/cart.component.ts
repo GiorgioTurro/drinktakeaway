@@ -11,7 +11,7 @@ declare var paypal;
 export class CartComponent implements OnInit {
   @ViewChild('paypal', {static: true}) paypalElement: ElementRef;
 discount: string ="";
-paidFor = false;
+
   constructor(public orderService: OrderService) {
   }
 //
@@ -32,7 +32,8 @@ paidFor = false;
       },
       onApprove: async (data, actions) => {
         const order = await actions.order.capture();
-        this.paidFor=true;
+        this.orderService.paidFor=true;
+        this.orderService.confirmOrder();
         console.log(order);
         this.onEmptyCart();
       },

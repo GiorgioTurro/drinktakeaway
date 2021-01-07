@@ -1,21 +1,45 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../shared/product.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 order: Product[]=[];
 product1: Product;
 subtotal: number=0;
+paidFor = false;
+
+
+
+confirmOrder(){
+  const dataParams = {
+  userEmail: "",
+  localID: ""
+  };
+  dataParams.userEmail = 'turro.giorgio@gmail.com';
+  dataParams.localID = '2';
+  this.order.forEach((product, index) => {
+    dataParams[index] = {
+      drinkID: product.id.toString(),
+      drinkPrice: product.price,
+      drinkNumerosity: product.quantity,
+    };
+  });
+  this.http.post<any>('http://127.0.0.1:1111/api/v1/saveOrder', dataParams).subscribe(data => {
+        console.log(data);
+    })
+}
 
 getOrder(){
   return this.order;
 }
 
 onAddProduct(p: Product){
+  this.paidFor = false;
   this.subtotal=0;
    let exist=0;
   for(let prod of this.order){
@@ -26,7 +50,7 @@ onAddProduct(p: Product){
     }
   }
   if(exist===0){
-    this.product1 = new Product(p.name, p.price, p.category);
+    this.product1 = new Product(p.id, p.name, p.price, p.category);
     this.product1.quantity=p.quantity;
     this.order.push(this.product1);
     console.log(this.order);
@@ -36,6 +60,7 @@ onAddProduct(p: Product){
     }
   console.log(this.subtotal);
   p.quantity=0;
+  console.log(this.order)
 }
 
 onEmptyOrder(){

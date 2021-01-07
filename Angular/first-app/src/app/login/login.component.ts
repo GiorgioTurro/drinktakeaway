@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { OauthService } from '../_services/oauth.service'
 import { TokenService } from '../_services/token.service';
 import { TokenDto } from '../models/token-dto';
+import { LoginService } from '../_services/login.service'
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
 
 @Component({
@@ -31,6 +32,9 @@ export class LoginComponent implements OnInit {
       data => {
         this.userLogged = data;
         this.isLogged = (this.userLogged != null && this.tokenService.getToken() != null);
+        // console.log(this.userLogged);
+        // console.log("SPAZIO");
+        // console.log(this.isLogged);
       }
     );
   }
@@ -38,9 +42,7 @@ export class LoginComponent implements OnInit {
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
       data => {
-        console.log("prova")
         console.log(data);
-
         this.socialUser = data;
 
         const tokenGoogle = new TokenDto(this.socialUser.idToken);
